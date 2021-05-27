@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-import Info from "../Icons/Info";
-import Arrow from "../Icons/Arrow";
-import Dods from "../Icons/Dods";
+import Info from '../Icons/Info';
+import Arrow from '../Icons/Arrow';
+import Dods from '../Icons/Dods';
 
 import './style.css'
 
@@ -18,7 +18,7 @@ const getBrightness = (color) => {
 const options = {
   legend: {
     position: 'right',
-    align: "center",
+    align: 'center',
     fontFamily: 'sans-serif',
     labels: {
       strokeStyle: 'transparent',
@@ -35,9 +35,9 @@ const customPlugin = {
   beforeDraw: (chartInstance) => {
     if (!chartInstance.data.datasets?.length) return;
 
-    const { ctx, chartArea: { left, right, top, bottom} } = chartInstance;
+    const { ctx, chartArea: { left, right, top, bottom } } = chartInstance;
     const text = chartInstance.data.datasets[0].total;
-    const chartCenterY = (left + right)/2;
+    const chartCenterY = (left + right) / 2;
 
     ctx.restore();
 
@@ -45,21 +45,21 @@ const customPlugin = {
     ctx.font = '25px sans-serif';
 
     const textWidth = Math.floor(ctx.measureText(text).width);
-    const Y = (top + bottom)/2;
-    const X = chartCenterY - (textWidth/2);
+    const Y = (top + bottom) / 2;
+    const X = chartCenterY - (textWidth / 2);
 
-    ctx.fillText(text,  X, Y);
+    ctx.fillText(text, X, Y);
     ctx.save();
   },
 };
 
-const Chart = ({dataChart, title}) => {
+const Chart = ({ dataChart, title }) => {
   const [data, setData] = useState({});
 
   useEffect(() => {
     if (!dataChart.data) return;
     const newData = {
-      labels:dataChart.labels,
+      labels: dataChart.labels,
       datasets: [
         {
           data: dataChart.data,
@@ -79,8 +79,8 @@ const Chart = ({dataChart, title}) => {
             font: {
               family: 'sans-serif',
             },
-            color: (chart) => {  
-              const { dataIndex, dataset: {backgroundColor} } = chart;
+            color: (chart) => {
+              const { dataIndex, dataset: { backgroundColor } } = chart;
               const currentBg = backgroundColor[dataIndex];
               return getBrightness(currentBg) >= getBrightness('#808080') ? 'black' : 'white';
             },
@@ -94,14 +94,14 @@ const Chart = ({dataChart, title}) => {
   return (
     <div className='chart-container'>
       <div className='chart-title'>
-        <h1 className='chart-title-text'>{title} <Info className='icon-m-l'/></h1>
+        <h1 className='chart-title-text'>{title}<Info className='icon-m-l' /></h1>
         <button className='dods-btn'><Dods /></button>
       </div>
       <div className='chart-content'>
-        <Doughnut data={data} options={options} plugins={[ChartDataLabels, customPlugin]}/>
+        <Doughnut data={data} options={options} plugins={[ChartDataLabels, customPlugin]} />
       </div>
       <div className='chart-footer'>
-        <button className={'full-btn'}>View full report <Arrow className='icon-m-l'/></button>
+        <button className='full-btn'>View full report<Arrow className='icon-m-l' /></button>
       </div>
     </div>
   );
