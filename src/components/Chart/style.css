@@ -1,0 +1,79 @@
+.chart-content {
+    width: 400px;
+    height: 310px;
+    margin: 30px 8px;
+}
+
+.chart-container {
+    padding: 16px;
+    width: 448px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+}
+
+.chart-title {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 15px;
+}
+
+.chart-title-text {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 15px;
+    line-height: 22px;
+    color: #323232;
+    font-weight: normal;
+}
+
+.icon-m-l {
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+.chart-footer {
+    padding: 0 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.full-btn {
+    background-color: transparent;
+    border-color: transparent;
+    outline-color: transparent;
+    padding: 10px;
+    color: #382C9C;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.full-btn > svg {
+    margin-left: 12px;
+}
+
+.full-btn:hover {
+    background-color: #382C9C0D;
+}
+
+.dods-btn {
+    background-color: transparent;
+    border-color: transparent;
+    outline-color: transparent;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dods-btn:hover {
+    background-color: #3131310D;
+}

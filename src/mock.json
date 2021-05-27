@@ -1,0 +1,19 @@
+{
+  "data": [
+    204,
+    59,
+    51,
+    80,
+    60,
+    230
+  ],
+  "labels": [
+    "Web",
+    "Quality Assurance",
+    "Project management",
+    "Product Design",
+    "Mobile",
+    "Other"
+  ],
+  "title": "Headcount"
+}
