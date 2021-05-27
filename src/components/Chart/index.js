@@ -16,6 +16,7 @@ const getBrightness = (color) => {
 }
 
 const options = {
+  maintainAspectRatio: false,
   legend: {
     position: 'right',
     align: 'center',
@@ -27,7 +28,6 @@ const options = {
       fontSize: 13,
     },
   },
-  maintainAspectRatio: false,
 };
 
 const customPlugin = {
@@ -78,6 +78,7 @@ const Chart = ({ dataChart, title }) => {
             labels: dataChart.data,
             font: {
               family: 'sans-serif',
+              weight: '400',
             },
             color: (chart) => {
               const { dataIndex, dataset: { backgroundColor } } = chart;
@@ -98,7 +99,11 @@ const Chart = ({ dataChart, title }) => {
         <button className='dods-btn'><Dods /></button>
       </div>
       <div className='chart-content'>
-        <Doughnut data={data} options={options} plugins={[ChartDataLabels, customPlugin]} />
+        <Doughnut
+          data={data}
+          options={options}
+          plugins={[ChartDataLabels, customPlugin]}
+         />
       </div>
       <div className='chart-footer'>
         <button className='full-btn'>View full report<Arrow className='icon-m-l' /></button>

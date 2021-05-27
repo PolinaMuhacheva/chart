@@ -1,7 +1,8 @@
 .chart-content {
-    width: 400px;
-    height: 310px;
-    margin: 30px 8px;
+    position: relative;
+    width: calc(100% - 16px);
+    height: 235px;
+    padding: 30px 8px;
 }
 
 .chart-container {
