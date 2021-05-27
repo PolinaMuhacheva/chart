@@ -11,7 +11,8 @@ Task description:
 - Chart.js
 ## Demo
 To view the demo please follow the link below:\
-link
+https://chart-test-task.herokuapp.com/
+
 ## How to run locally
 1. Run `npm install`
 2. Run `npm start`
